@@ -3,6 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>MapReducer</AssemblyName>
+    <RootNamespace>MapReducer</RootNamespace>
+    <Description>Software used to explain MapReduce.</Description>
   </PropertyGroup>
 
 </Project>

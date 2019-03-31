@@ -45,11 +45,11 @@ namespace ConsoleApp1.Data
         public static Schedule[] GetScheduleTable =
         {
             new Schedule(0, "Intro 1", 2),
-            new Schedule(1, "Dev 3", 4),
-            new Schedule(2, "ANL 3", 3),
-            new Schedule(3, "Dev 6b", 1),
-            new Schedule(4, "Dev 6a", 2),
-            new Schedule(5, "ANL 2", 8),
+            new Schedule(1, "Dev3", 4),
+            new Schedule(2, "ANL3", 3),
+            new Schedule(3, "Dev6b", 1),
+            new Schedule(4, "Dev6a", 2),
+            new Schedule(5, "ANL2", 8),
             new Schedule(6, "BNND", 5),
             new Schedule(7, "DIN", 8)
         };
