@@ -1,0 +1,41 @@
+Online sandbox
+https://neo4j.com/product/
+
+#######################
+Create (p:Person{id:0, name:"Ed"})-[:Knows{since:"2019-01-02",lastSeen:"2019-03-02",state:"Good"}]->(pp:Person{id:1, name:"Jeroen"})
+Create (pp)-[:Knows{since:"2019-01-02",lastSeen:"2019-03-02",state:"Good"}]->(p)
+Create (pp)-[:Knows{since:"2019-02-01",lastSeen:"2019-02-21",state:"Neutral"}]->(ppp:Person{id:2, name:"Gerard"})
+Create (ppp)-[:Knows{since:"2019-02-01",lastSeen:"2019-02-21",state:"Good"}]->(pp)
+Create (ppp)-[:Knows{since:"2019-01-01",lastSeen:"2019-01-01",state:"Bad"}]->(ppppp:Person{id:4, name:"John"})
+Create (pppp:Person{id:3, name:"Bas"})-[:Knows{since:"2017-02-21",lastSeen:"2019-04-01",state:"Good"}]->(ppppp)
+Create (ppppp)-[:Knows{since:"2017-02-21",lastSeen:"2019-04-01",state:"Neutral"}]->(pppp)
+Create (p)-[:Knows{since:"2018-12-21",lastSeen:"2019-02-01",state:"Neutral"}]->(ppppp)
+Create (pe:Pet{id:0, name:"Meow"})-[:Knows{since:"2019-01-21",lastSeen:"2019-04-04",state:"Neutral"}]->(pepe:Pet{id:1, name:"Pow"})
+Create (pepe)-[:Knows{since:"2019-01-21",lastSeen:"2019-04-04",state:"Good"}]->(pe)
+Create (pepepe:Pet{id:2, name:"Elmut"})-[:Knows{since:"2018-12-22",lastSeen:"2019-03-25",state:"Neutral"}]->(pepe)
+Create (pepe)-[:Knows{since:"2018-12-22",lastSeen:"2019-03-25",state:"Neutral"}]->(pepepe)
+Create (ppp)-[:Has]->(pepe)
+Create (pp)-[:Has]->(pe)
+Create (pppp)-[:Has]->(pepepe)
+Create (pp)-[:Seen]->(pepe)
+Create (ppppp)-[:Seen]->(pepe)
+
+#######################
+
+TODO 1:
+Selecteer en return elk huis dier
+
+TODO 2:
+Selecteer en return elke persoon die een huisdier heeft.
+
+TODO 3:
+Selecteer en return elke persoon die een "Neutral" relatie heeft met een ander persoon.
+
+TODO 4:
+Selecteer elke persoon die een huisdier heeft en een huisdier heeft gezien.
+
+TODO 5:
+Selecteer en return elke persoon en relatie waarin de relatie state gelijk is.
+
+TODO 6:
+Selecteer en return elke persoon die een persoon kent die een huisdier heeft gezien.
