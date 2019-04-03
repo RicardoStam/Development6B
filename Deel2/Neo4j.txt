@@ -10,9 +10,9 @@ Create (ppp)-[:Knows{since:"2019-01-01",lastSeen:"2019-01-01",state:"Bad"}]->(pp
 Create (pppp:Person{id:3, name:"Bas"})-[:Knows{since:"2017-02-21",lastSeen:"2019-04-01",state:"Good"}]->(ppppp)
 Create (ppppp)-[:Knows{since:"2017-02-21",lastSeen:"2019-04-01",state:"Neutral"}]->(pppp)
 Create (p)-[:Knows{since:"2018-12-21",lastSeen:"2019-02-01",state:"Neutral"}]->(ppppp)
-Create (pe:Pet{id:0, name:"Meow"})-[:Knows{since:"2019-01-21",lastSeen:"2019-04-04",state:"Neutral"}]->(pepe:Pet{id:1, name:"Pow"})
+Create (pe:Pet{id:0, name:"Meow", type: "Cat"})-[:Knows{since:"2019-01-21",lastSeen:"2019-04-04",state:"Neutral"}]->(pepe:Pet{id:1, name:"Pow", type: "Dog"})
 Create (pepe)-[:Knows{since:"2019-01-21",lastSeen:"2019-04-04",state:"Good"}]->(pe)
-Create (pepepe:Pet{id:2, name:"Elmut"})-[:Knows{since:"2018-12-22",lastSeen:"2019-03-25",state:"Neutral"}]->(pepe)
+Create (pepepe:Pet{id:2, name:"Elmut", type:"bird"})-[:Knows{since:"2018-12-22",lastSeen:"2019-03-25",state:"Neutral"}]->(pepe)
 Create (pepe)-[:Knows{since:"2018-12-22",lastSeen:"2019-03-25",state:"Neutral"}]->(pepepe)
 Create (ppp)-[:Has]->(pepe)
 Create (pp)-[:Has]->(pe)
@@ -23,7 +23,7 @@ Create (ppppp)-[:Seen]->(pepe)
 #######################
 
 TODO 1:
-Selecteer en return elk huis dier
+Selecteer en return elk huisdier
 
 TODO 2:
 Selecteer en return elke persoon die een huisdier heeft.
