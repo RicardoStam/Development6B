@@ -70,30 +70,30 @@ namespace ConsoleApp1
         /// <param name="table2">Second input table</param>
         /// <param name="condition">Lambda function which returns a boolean</param>
         /// <returns></returns>
-        public static IEnumerable<Tuple<T1, T2>> Join<T1, T2>(this IEnumerable<T1> table1, IEnumerable<T2> table2, Func<T1, T2, bool> condition)
+        public static IEnumerable<Tuple<T1, T2>> Join<T1, T2>(this IEnumerable<T1> table1, IEnumerable<T2> table2,
+                                                              Func<T1, T2, bool> condition)
         {
-            //Reduce Table1 and a new List
             return  Reduce
                     (
                     table1,
                     new List<Tuple<T1, T2>>(),
                     (queryResult, table1Element) =>
                     {
-                        List<Tuple<T1, T2>> combination = 
+                        List<Tuple<T1, T2>> combination =
                             Reduce
                             (
                             table2,
                             new List<Tuple<T1, T2>>(),
                             (combi, table2Element) =>
+                            {
+                                Tuple<T1, T2> row = new Tuple<T1, T2>(table1Element, table2Element);
+                                if (condition(table1Element, table2Element))
                                 {
-                                    Tuple<T1, T2> row = new Tuple<T1, T2>(table1Element, table2Element);
-                                    if (condition(table1Element, table2Element))
-                                    {
-                                        combi.Add(row);
-                                    }
-
-                                    return combi;
+                                    combi.Add(row);
                                 }
+
+                                return combi;
+                            }
                             );
                         queryResult.AddRange(combination);
                         return queryResult;
@@ -113,11 +113,7 @@ namespace ConsoleApp1
             //Query 1:
             // print de voornamen van alle studenten (met map en een keer met reduce).
             // var q1 = StudentTable.Reduce();
-            var q1 = StudentTable.Map(student => new { student.FirstName });
-
-            var x = new { q1 };
-
-            Console.WriteLine(x.GetType().ToString());
+            // var q1 = StudentTable.Map();
 
             //Query 2:
             // print de namen van alle courses
@@ -131,8 +127,11 @@ namespace ConsoleApp1
             // Query 5:
             // print de voornaam, achternaam en klas van een student
 
-            //Query:
-            // print de voor en achternaam van alle studenten die in klas "INF1A" zitten.
+            // Query 6:
+            // print de voor en achternaam van alle studenten die in klas "INF1A" als slc hebben.
+            
+            //Query 7:
+            // print de voor en achternaam van alle studenten die "TONIR" als slc hebben.
 
             // En nu?...
             // Wat wil je nog meer weten over de data? 
