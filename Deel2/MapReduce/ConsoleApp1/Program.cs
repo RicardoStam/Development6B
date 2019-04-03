@@ -128,7 +128,7 @@ namespace ConsoleApp1
             // print de voornaam, achternaam en klas van een student
 
             // Query 6:
-            // print de voor en achternaam van alle studenten die in klas "INF1A" als slc hebben.
+            // print de voor en achternaam van alle studenten die in klas "INF1A" zitten.
             
             //Query 7:
             // print de voor en achternaam van alle studenten die "TONIR" als slc hebben.
